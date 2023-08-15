@@ -48,7 +48,6 @@ def draw_bbox(image: Any, box: Any, width: int = 5, color: str = "red") -> Image
         image = Image.fromarray(image)
     elif isinstance(image, torch.Tensor):
         image = T.ToPILImage()(image)
-    print(box)
     if isinstance(box, np.ndarray):
         box = torch.as_tensor(box)
     draw = ImageDraw.Draw(image)
